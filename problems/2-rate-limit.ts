@@ -25,9 +25,9 @@ async function rateLimiter(userId, maxRequests, windowSizeInSeconds) {
     return false;
   }
 
-  for (let i = 0; i < current.length; i++) {
-    if (current[i][0]) {
-      console.error("redis error", current[i][0]);
+  for (const element of current) {
+    if (element[0]) {
+      console.error("redis error", element[0]);
       return false;
     }
   }
